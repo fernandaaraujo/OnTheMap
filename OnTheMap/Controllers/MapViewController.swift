@@ -49,7 +49,7 @@ class MapViewController: UIViewController {
                     self.addAnnotations(results!)
                 }
             } else {
-                Alert.pushAlert(controller: self, message: AlertMessages.errorStudentData)
+                self.pushAlert(controller: self, message: AlertMessages.errorStudentData)
             }
         }
     }
@@ -78,7 +78,7 @@ extension MapViewController: MKMapViewDelegate {
             if let url = URL(string: (view.annotation?.subtitle!)!), app.canOpenURL(url) {
                 app.open(url, options: [:], completionHandler: nil)
             } else {
-                Alert.pushAlert(controller: self, message: AlertMessages.errorURL)
+                self.pushAlert(controller: self, message: AlertMessages.errorURL)
             }
         }
     }

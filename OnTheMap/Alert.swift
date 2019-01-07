@@ -1,8 +1,8 @@
 import Foundation
 import UIKit
 
-class Alert {
-    class func pushAlert(title: String? = AlertMessages.errorTitle, controller: UIViewController, message: String) {
+extension UIViewController {
+    func pushAlert(title: String? = AlertMessages.errorTitle, controller: UIViewController, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
 

@@ -25,7 +25,7 @@ class AddLocationMapViewController: UIViewController {
 
             self.mapView.addAnnotation(annotation)
         } else {
-            Alert.pushAlert(controller: self, message: AlertMessages.emptyPlacemark)
+            self.pushAlert(controller: self, message: AlertMessages.emptyPlacemark)
         }
     }
 
@@ -42,24 +42,24 @@ class AddLocationMapViewController: UIViewController {
                                     self.navigationController?.popToRootViewController(animated: true)
                                 }
                             } else {
-                                Alert.pushAlert(controller: self, message: errorString!)
+                                self.pushAlert(controller: self, message: errorString!)
                             }
                         })
                     } else {
                         Client.sharedInstance().updateStudentLocation(data, { (success, errorString) in
                             if success {
                                 performUIUpdatesOnMain {
-                                    Alert.pushAlert(controller: self, message: AlertMessages.successfullyAdded)
+                                    self.pushAlert(controller: self, message: AlertMessages.successfullyAdded)
                                     self.navigationController?.popToRootViewController(animated: true)
                                 }
                             } else {
-                                Alert.pushAlert(controller: self, message: errorString!)
+                                self.pushAlert(controller: self, message: errorString!)
                             }
                         })
                     }
                 }
             } else {
-                Alert.pushAlert(controller: self, message: errorString!)
+                self.pushAlert(controller: self, message: errorString!)
             }
         }
     }

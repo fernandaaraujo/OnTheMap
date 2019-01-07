@@ -85,9 +85,9 @@ extension Client {
                 }
             } else {
                 if let error = error {
-                    Alert.pushAlert(controller: viewController, message: error)
+                    viewController.pushAlert(controller: viewController, message: error)
                 } else {
-                    Alert.pushAlert(controller: viewController,
+                    viewController.pushAlert(controller: viewController,
                                     message: AlertMessages.generalError)
                 }
             }

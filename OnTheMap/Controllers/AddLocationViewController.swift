@@ -30,7 +30,7 @@ class AddLocationViewController: UIViewController, UITextFieldDelegate {
 
             geocoder.geocodeAddressString(locationTextField.text!) { (placemarks, error) in
                 if let error = error {
-                    Alert.pushAlert(controller: self, message: error.localizedDescription)
+                    self.pushAlert(controller: self, message: error.localizedDescription)
                 } else {
                     if let placemark = placemarks?.first {
                         let controller = self.storyboard!.instantiateViewController(withIdentifier: "AddLocationMapViewController") as! AddLocationMapViewController
@@ -45,10 +45,10 @@ class AddLocationViewController: UIViewController, UITextFieldDelegate {
                 }
             }
         } else if urlTextField.text?.isEmpty == true {
-            Alert.pushAlert(controller: self, message: AlertMessages.errorURL)
+            self.pushAlert(controller: self, message: AlertMessages.errorURL)
             self.navigationController?.popViewController(animated: true)
         } else {
-            Alert.pushAlert(controller: self, message: AlertMessages.errorLocation)
+            self.pushAlert(controller: self, message: AlertMessages.errorLocation)
             self.navigationController?.popViewController(animated: true)
         }
     }

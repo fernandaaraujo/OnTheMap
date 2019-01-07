@@ -14,7 +14,7 @@ class LoginViewController: UIViewController {
 
     @IBAction func Login(_ sender: UIButton) {
         if emailTextField.text!.isEmpty || passwordTextField.text!.isEmpty {
-            Alert.pushAlert(controller: self, message: AlertMessages.emptyUserData)
+            self.pushAlert(controller: self, message: AlertMessages.emptyUserData)
         } else {
             Client.sharedInstance().getSessionID(username: emailTextField.text!,
                                                  password: passwordTextField.text!) { (success, errorString) in
@@ -23,9 +23,9 @@ class LoginViewController: UIViewController {
                         self.completeLogin()
                     } else {
                         if let error = errorString {
-                            Alert.pushAlert(controller: self, message: error)
+                            self.pushAlert(controller: self, message: error)
                         } else {
-                            Alert.pushAlert(controller: self, message: AlertMessages.generalError)
+                            self.pushAlert(controller: self, message: AlertMessages.generalError)
                         }
                     }
                 }

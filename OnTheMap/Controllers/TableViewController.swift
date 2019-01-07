@@ -16,7 +16,7 @@ class TableViewController: UIViewController {
                     self.locationsTableView.reloadData()
                 }
             } else {
-                Alert.pushAlert(controller: self, message: AlertMessages.errorStudentData)
+                self.pushAlert(controller: self, message: AlertMessages.errorStudentData)
             }
         }
     }
@@ -46,7 +46,7 @@ extension TableViewController: UITableViewDelegate, UITableViewDataSource {
         if let url = URL(string: data.mediaURL){
             UIApplication.shared.open(url, options: [:])
         } else {
-            Alert.pushAlert(controller: self, message: AlertMessages.errorURL)
+            self.pushAlert(controller: self, message: AlertMessages.errorURL)
         }
     }
 }

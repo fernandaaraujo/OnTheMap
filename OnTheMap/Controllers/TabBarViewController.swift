@@ -23,7 +23,7 @@ class TabBarViewController: UITabBarController {
                     tableViewController.loadView()
                 }
             } else {
-                Alert.pushAlert(controller: self, message: AlertMessages.errorStudentData)
+                self.pushAlert(controller: self, message: AlertMessages.errorStudentData)
             }
         }
     }

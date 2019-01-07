@@ -19,7 +19,7 @@ class Client: NSObject{
                 completionHandlerForGET(nil, NSError(domain: "taskForGETMethod", code: 1, userInfo: userInfo))
             }
 
-            guard (error == nil) else {
+            guard error == nil else {
                 sendError("There was an error with the request: \(String(describing: error))")
                 return
             }
@@ -54,7 +54,7 @@ class Client: NSObject{
                 completionHandlerForPOST(nil, NSError(domain: "taskForPOSTMethod", code: 1, userInfo: userInfo))
             }
 
-            guard (error == nil) else {
+            guard error == nil else {
                 sendError("There was an error with the request: \(String(describing: error))")
                 return
             }
@@ -89,7 +89,7 @@ class Client: NSObject{
                 completionHandlerForPUT(nil, NSError(domain: "taskForPUTMethod", code: 1, userInfo: userInfo))
             }
 
-            guard (error == nil) else {
+            guard error == nil else {
                 sendError("There was an error with the request: \(String(describing: error))")
                 return
             }
@@ -137,7 +137,7 @@ class Client: NSObject{
                 completionHandlerForDelete(nil, NSError(domain: "taskForPOSTMethod", code: 1, userInfo: userInfo))
             }
 
-            guard (error == nil) else {
+            guard error == nil else {
                 sendError("There was an error with the request: \(String(describing: error))")
                 return
             }
